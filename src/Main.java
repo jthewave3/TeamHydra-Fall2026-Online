@@ -7,6 +7,7 @@ public class Main {
         System.out.printf("Hello and welcome!");
         System.out.println("Welcome to the thunder-dome of programming! - Jaleel");
         System.out.println("i added dis comment David");
+        System.out.println("The date for this commit is 9/16/2026 -Mi");
 
 
         for (int i = 1; i <= 5; i++) {
