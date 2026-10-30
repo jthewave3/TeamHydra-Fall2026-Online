@@ -1,0 +1,12 @@
+# name|minHp|maxHp|minDamage|maxDamage|section
+# section: 0 = floors 10-8, 1 = floors 7-5, 2 = floors 4-2, 3 = boss
+Bellhop Ghost|20|30|4|6|0
+Room Service Ghoul|20|30|4|6|0
+Laundry Wraith|20|30|4|6|0
+The Concierge|35|45|7|13|1
+Housekeeping Horror|35|45|7|13|1
+Weeping Maid|35|45|7|13|1
+Night Auditor|55|65|15|20|2
+The Doorman|55|65|15|20|2
+"Checked In, Never Out"|55|65|15|20|2
+The Manager|90|90|20|30|3

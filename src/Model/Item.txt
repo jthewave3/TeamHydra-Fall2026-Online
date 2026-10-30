@@ -1,0 +1,16 @@
+# name|description|effect|value|duration|minAttack|maxAttack|section
+# effect: WEAPON, KEY, HEAL_PERCENT, MONSTER_DAMAGE_PERCENT, SHIELD_PERCENT, DAMAGE_BOOST_PERCENT, STUN
+# value: effect strength, usually a percentage (STUN ignores it); duration: turns the effect lasts (0 = instant)
+# Weapons (effect WEAPON): each hit adds a random bonus between minAttack and maxAttack.
+#   section 0-2 = the one unique weapon placed in that section; -1 = never placed randomly (only via Room.txt fixedItem)
+# Everything else: minAttack and maxAttack must be 0 and section must be -1. Potions fill the other item rooms and can repeat.
+Stairway Key|An old hotel key used to unlock the stairway door leading to the next door|KEY|0|0|0|0|-1
+Sword|An old sword with a scratched blade, but still sharp enough to fight the creatures roaming the hotel.|WEAPON|0|0|5|8|0
+Bow & Arrow|A wooden bow with a limited supply of arrows, allowing the player to attack from a distance.|WEAPON|0|0|10|15|1
+Fire Axe|A heavy emergency axe taken from one of the hotel's fire-safety cases.|WEAPON|0|0|20|28|-1
+Vanishing Potion|A smoky black potion that releases a strange mist when used near a monster.|MONSTER_DAMAGE_PERCENT|100|0|0|0|-1
+Shrinking Potion|A bright green potion that causes a monster to shrink to half its normal size.|MONSTER_DAMAGE_PERCENT|50|0|0|0|-1
+Healing Potion|A glowing red potion that restores the player's strength after being injured.|HEAL_PERCENT|25|0|0|0|-1
+Shield Potion|A silver potion that creates a temporary protective barrier around the player.|SHIELD_PERCENT|25|2|0|0|-1
+Clone Potion|A strange blue potion that temporarily creates a copy of the player during combat.|DAMAGE_BOOST_PERCENT|100|2|0|0|-1
+Flash Bomb|A small emergency device that releases a powerful burst of light when thrown.|STUN|0|2|0|0|-1
