@@ -1,4 +1,4 @@
-package model; // all the game data classes live in this package
+package Model; // all the game data classes live in this package
 
 public enum Direction { // the four ways the player can move
     NORTH, EAST, SOUTH, WEST; // order matters, opposite() relies on it

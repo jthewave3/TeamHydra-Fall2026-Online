@@ -1,4 +1,4 @@
-package model; // all the game data classes live in this package
+package Model; // all the game data classes live in this package
 
 public class Inventory { // the player's 5 slots, A to E
     public static final int SIZE = 5; // always 5 slots

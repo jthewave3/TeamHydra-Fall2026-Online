@@ -1,4 +1,4 @@
-package model; // all the game data classes live in this package
+package Model; // all the game data classes live in this package
 
 public enum RoomType { // the kinds of rooms on a floor
     START("Hallway"), // where you arrive on each floor

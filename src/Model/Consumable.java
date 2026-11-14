@@ -1,4 +1,4 @@
-package model; // all the game data classes live in this package
+package Model; // all the game data classes live in this package
 
 public class Consumable extends Item { // potions and the flash bomb, they get used up
     private String effect; // vanish, shrink, heal, shield, clone or stun

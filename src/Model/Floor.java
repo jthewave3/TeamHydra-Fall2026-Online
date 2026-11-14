@@ -1,4 +1,4 @@
-package model; // all the game data classes live in this package
+package Model; // all the game data classes live in this package
 
 import java.util.ArrayList; // list of rooms
 

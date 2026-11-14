@@ -1,4 +1,4 @@
-package model; // all the game data classes live in this package
+package Model; // all the game data classes live in this package
 
 public class Character { // parent of Player and Monster, anything with health
     private String name; // who this is

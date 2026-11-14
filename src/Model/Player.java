@@ -1,4 +1,4 @@
-package model; // all the game data classes live in this package
+package Model; // all the game data classes live in this package
 
 public class Player extends Character { // the person playing
     private Inventory inventory = new Inventory(); // the 5 item slots

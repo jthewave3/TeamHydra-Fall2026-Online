@@ -1,4 +1,4 @@
-package model; // all the game data classes live in this package
+package Model; // all the game data classes live in this package
 
 import java.io.File; // the save file
 import java.io.PrintWriter; // writes text to the file
