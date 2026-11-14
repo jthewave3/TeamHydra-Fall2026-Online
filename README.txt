@@ -130,6 +130,36 @@ Answers ignore capitalization and spaces. A wrong answer costs 3 HP.
 If all attempts are used, the puzzle locks and you must visit at
 least two other rooms before trying it again.
 
+How to decode:
+Take each letter shown in the puzzle and shift it backward by the number given
+in the opposite direction from how it was encoded.
+Or use the reference table: find the puzzle's letter in the column matching that shift number,
+then read left to the Plain Letter column to get the real letter.
+
+For example (shift 3): the cipher "J X H V W E R R N" decodes letter by letter by shifting each one back 3 places:
+
+J shifted back 3 is G
+X shifted back 3 is U
+H shifted back 3 is E
+V shifted back 3 is S
+W shifted back 3 is T
+E shifted back 3 is B
+R shifted back 3 is O
+R shifted back 3 is O
+N shifted back 3 is K
+
+|Plain Letter|Shift 2|Shift 3|Shift 4|
+--------------------------------------
+|     A      |   C   |   D   |   E   |
+--------------------------------------
+|     B      |   D   |   E   |   F   |
+--------------------------------------
+|     C      |   E   |   F   |   G   |
+--------------------------------------
+|     D      |   F   |   G   |   H   |
+--------------------------------------
+|     E      |   G   |   H   |   I   |
+
 
 COMBAT
 ------
