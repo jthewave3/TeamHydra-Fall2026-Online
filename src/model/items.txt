@@ -1,0 +1,12 @@
+# Every item here can be found in item rooms. A01 (the key) isn't an item room item so it isn't listed.
+# weapon:     W | id | name | description | min damage | max damage | uses | bow (true/false) | slow (true/false)
+# consumable: C | id | name | description | effect (vanish, shrink, heal, shield, clone, stun)
+W|A02|Sword|An old sword with a scratched blade. Deals 5-8 damage and breaks after 20 attacks.|5|8|20|false|false
+W|A03|Bow & Arrow|A wooden bow. Deals 10-15 damage. It holds 15 arrows and never breaks.|10|15|15|true|false
+W|A04|Fire Axe|A heavy axe. Deals 20-28 damage but only swings every other turn. Breaks after 8 attacks.|20|28|8|false|true
+C|A05|Vanishing Potion|A smoky black potion. Makes the monster disappear.|vanish
+C|A06|Shrinking Potion|A bright green potion. Takes away half of the monster's health.|shrink
+C|A07|Healing Potion|A glowing red potion. Heals 25% of your health.|heal
+C|A08|Shield Potion|A silver potion. You take 25% less damage for 2 turns.|shield
+C|A09|Clone Potion|A blue potion. A clone doubles your damage for 2 turns.|clone
+C|A10|Flash Bomb|A small device. Stuns the monster for 2 turns.|stun

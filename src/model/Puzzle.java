@@ -1,26 +1,11 @@
 package model; // all the game data classes live in this package
 
+import java.util.ArrayList; // list of data rows
 import java.util.Random; // needed to pick a random puzzle and cipher shift
 
 public class Puzzle { // a riddle, word scramble or caesar cipher in a puzzle room
-    // each row: id, name, answer, text shown to the player
-    private static String[][] TABLE = { // the data table
-        // section 1 riddles (floors 10 to 8)
-        {"P00", "Room Key", "key", "Engraved on a brass tag hanging from the nightstand:\n\"I open your door, but I'm not a hand.\nLose me, and you're locked out until someone lets you back in.\nWhat am I?\""}, // Room Key
-        {"P01", "Minibar", "minibar", "A note taped to a small locked cabinet:\n\"I'm small, I'm cold, and everything inside me costs more than it should. What am I?\""}, // Minibar
-        {"P02", "Do Not Disturb", "sign", "Hanging crooked from a doorknob:\n\"I hang on a handle and speak for you when you can't answer the door. What am I?\""}, // Do Not Disturb
-        {"P03", "Elevator", "elevator", "Scratched into the call button panel:\n\"I go up, I go down, but I never take a single step. What am I?\""}, // Elevator
-        // section 2 word scrambles (floors 7 to 5)
-        {"P04", "Housekeeping Cart", "cart", "Left abandoned in the halls by the weeping maids:\n\"T R C A\"\nUnscramble the letters into one real word."}, // Housekeeping Cart
-        {"P05", "Vacancy Sign", "vacancy", "Flickering outside the window, the sign's letters have rearranged themselves:\n\"Y A C V A N C\"\nUnscramble the letters into one real word."}, // Vacancy Sign
-        {"P06", "Ice Machine", "icemachine", "Frost has fogged the label into an unreadable jumble:\n\"M C A N I E H C I E\"\nUnscramble the letters into one real word."}, // Ice Machine
-        {"P07", "Luggage", "luggage", "Sitting alone by the elevator, letters have fallen out of order:\n\"E G G A L U G\"\nUnscramble the letters into one real word."}, // Luggage
-        // section 3 caesar ciphers (floors 4 to 2), the coded word gets added when the puzzle is made
-        {"P08", "The Guest Book", "guestbook", "Open on the front desk, pages damp."}, // The Guest Book
-        {"P09", "The Bathroom Mirror", "mirror", "Fogged despite the cold in the bathroom."}, // The Bathroom Mirror
-        {"P10", "The Wake-Up Call", "phone", "It rings once, then falls silent."}, // The Wake-Up Call
-        {"P11", "The Bellboy", "bellboy", "A brass name tag lies abandoned on the carpet, the name beneath it scratched into code."} // The Bellboy
-    }; // end of the table
+    // each row in puzzles.txt: id, name, section, type, tries, answer, text
+    private static ArrayList<String[]> TABLE = null; // loaded from the file the first time it's needed
 
     private String id; // puzzle id like P00
     private String name; // puzzle name
@@ -44,24 +29,28 @@ public class Puzzle { // a riddle, word scramble or caesar cipher in a puzzle ro
     }
 
     public static Puzzle random(int floor, Random rand) { // picks a random puzzle for the floor
-        int section = (10 - floor) / 3; // 0 for floors 10-8, 1 for 7-5, 2 for 4-2
-        String[] row = TABLE[section * 4 + rand.nextInt(4)]; // one of the 4 puzzles in that section
-        String text = row[3]; // the text from the table
-        String type = "riddle"; // section 1 is riddles
-        int attempts = 4; // riddles get 4 tries
-        if (section == 1) { // section 2 is scrambles
-            type = "scramble"; // set the type
-            attempts = 3; // scrambles get 3 tries
+        if (TABLE == null) { // not loaded yet
+            TABLE = DataFile.read("puzzles.txt"); // read the file
         }
-        if (section == 2) { // section 3 is caesar ciphers
-            type = "caesar"; // set the type
-            attempts = 2; // ciphers get 2 tries
+        int section = (10 - floor) / 3; // 0 for floors 10-8, 1 for 7-5, 2 for 4-2
+        ArrayList<String[]> choices = new ArrayList<String[]>(); // every puzzle in that section
+        for (String[] r : TABLE) { // go through the table
+            if (r[2].equals(String.valueOf(section))) { // same section
+                choices.add(r); // keep it
+            }
+        }
+        String[] row = choices.get(rand.nextInt(choices.size())); // pick one
+        String type = row[3]; // riddle, scramble or caesar
+        int attempts = Integer.parseInt(row[4]); // tries allowed
+        String answer = row[5]; // the right answer
+        String text = row[6]; // the text from the table
+        if (type.equals("caesar")) { // caesar ciphers add a coded word
             int shift = 2 + rand.nextInt(3); // shift by 2, 3 or 4
-            text = text + " A note beside it reads \"shifted by " + shift + "\": " + shiftWord(row[2], shift); // add the coded word
+            text = text + " A note beside it reads \"shifted by " + shift + "\": " + shiftWord(answer, shift); // add the coded word
             text = text + "\nMove each letter back " + shift + " places to decode it."; // tell them how to decode
         }
         text = text + "\nType: solve <answer>"; // every puzzle says how to answer
-        return new Puzzle(row[0], row[1], row[2], type, text, attempts); // make the puzzle
+        return new Puzzle(row[0], row[1], answer, type, text, attempts); // make the puzzle
     }
 
     private static String shiftWord(String word, int shift) { // moves every letter forward in the alphabet

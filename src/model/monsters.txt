@@ -1,0 +1,12 @@
+# id | name | section | min hp | max hp | min damage | max damage | enter text | win text | flee text
+# section 0 = floors 10-8, 1 = floors 7-5, 2 = floors 4-2, boss = the manager on floor 1
+M00|Bellhop Ghost|0|20|30|4|6|A translucent bellhop drags luggage and blocks your way.|The ghost lets go of its baggage and dissolves into the dark.|You back away. The bellhop keeps dragging its invisible bags, uninterested in you.
+M01|Room Service Ghoul|0|20|30|4|6|A ghoul pushes a squeaking cart of rotten food, calling out a name that isn't yours.|The cart tips over as the ghoul collapses and fades.|You slip past. It's still calling that name, over and over.
+M02|Laundry Wraith|0|20|30|4|6|A shape hunches over a laundry cart, folding sheets that are already clean.|It stops folding at last, and the sheets settle into a still, empty pile.|You back away. It keeps folding, never looking up.
+M03|The Concierge|1|35|45|7|13|Its smile is stitched too wide to be real. It already knows your room number.|The smile finally falls, and it fades behind its podium.|You leave before it can 'assist' you further.
+M04|Housekeeping Horror|1|35|45|7|13|Its cart is full of things that used to be people.|The cart falls still as it collapses beside it.|You leave the cart exactly where it is.
+M05|Weeping Maid|1|35|45|7|13|She never stops scrubbing the same spot of floor, and she's noticed you watching.|She stops scrubbing at last, and the room goes quiet.|She keeps scrubbing. The stain never comes out.
+M06|Night Auditor|2|55|65|15|20|It balances the books in blood, and the ledger is never full.|The ledger slams shut as it fades from its desk.|You slip out. The pen keeps scratching without you.
+M07|The Doorman|2|55|65|15|20|He holds the door, and he has never once let anyone through it.|He finally steps aside and fades from the doorway.|He doesn't move. Neither does the door.
+M08|Checked In, Never Out|2|55|65|15|20|A guest stands at the front desk, still waiting on a reservation that was never real.|It finally stops waiting, and the desk bell goes silent.|It doesn't move. It's still waiting for someone to check it in.
+BOSS_00|The Manager|boss|90|90|20|30|It owns this hotel, and everyone who ever checked in. He's been expecting you.|It finally lets go, and the hotel around you seems to exhale.|There is no leaving this room.

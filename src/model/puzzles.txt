@@ -1,0 +1,15 @@
+# id | name | section | type | tries | answer | text      (use \n for a new line)
+# section 0 = floors 10-8, 1 = floors 7-5, 2 = floors 4-2
+# type: riddle, scramble or caesar (caesar adds the coded answer to the text when the puzzle is made)
+P00|Room Key|0|riddle|4|key|Engraved on a brass tag hanging from the nightstand:\n"I open your door, but I'm not a hand.\nLose me, and you're locked out until someone lets you back in.\nWhat am I?"
+P01|Minibar|0|riddle|4|minibar|A note taped to a small locked cabinet:\n"I'm small, I'm cold, and everything inside me costs more than it should. What am I?"
+P02|Do Not Disturb|0|riddle|4|sign|Hanging crooked from a doorknob:\n"I hang on a handle and speak for you when you can't answer the door. What am I?"
+P03|Elevator|0|riddle|4|elevator|Scratched into the call button panel:\n"I go up, I go down, but I never take a single step. What am I?"
+P04|Housekeeping Cart|1|scramble|3|cart|Left abandoned in the halls by the weeping maids:\n"T R C A"\nUnscramble the letters into one real word.
+P05|Vacancy Sign|1|scramble|3|vacancy|Flickering outside the window, the sign's letters have rearranged themselves:\n"Y A C V A N C"\nUnscramble the letters into one real word.
+P06|Ice Machine|1|scramble|3|icemachine|Frost has fogged the label into an unreadable jumble:\n"M C A N I E H C I E"\nUnscramble the letters into one real word.
+P07|Luggage|1|scramble|3|luggage|Sitting alone by the elevator, letters have fallen out of order:\n"E G G A L U G"\nUnscramble the letters into one real word.
+P08|The Guest Book|2|caesar|2|guestbook|Open on the front desk, pages damp.
+P09|The Bathroom Mirror|2|caesar|2|mirror|Fogged despite the cold in the bathroom.
+P10|The Wake-Up Call|2|caesar|2|phone|It rings once, then falls silent.
+P11|The Bellboy|2|caesar|2|bellboy|A brass name tag lies abandoned on the carpet, the name beneath it scratched into code.
