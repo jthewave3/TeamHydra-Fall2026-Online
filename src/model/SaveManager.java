@@ -5,10 +5,10 @@ import java.io.PrintWriter; // writes text to the file
 import java.util.Scanner; // reads text from the file
 
 public class SaveManager { // saves and loads the game using save.txt
-    private static String FILE_NAME = "save.txt"; // name of the save file
+    private static File FILE = new File("src" + File.separator + "model", "save.txt"); // the save file lives in the model package folder
 
     public static boolean saveExists() { // true if there is a save file
-        return new File(FILE_NAME).exists(); // check for the file
+        return FILE.exists(); // check for the file
     }
 
     // file format, one thing per line:
@@ -16,7 +16,7 @@ public class SaveManager { // saves and loads the game using save.txt
     //   5 inventory lines ("EMPTY" or "id uses"),
     //   then one line per room: "roomId visited cleared items" (items look like A02/20,A07/0 or - for none)
     public static void save(GameState state) throws Exception { // writes the game to the file
-        PrintWriter out = new PrintWriter(FILE_NAME); // open the file
+        PrintWriter out = new PrintWriter(FILE); // open the file
         Player player = state.getPlayer(); // the player
         Floor floor = state.getFloor(); // the floor
         out.println(state.getSeed()); // seed
@@ -48,7 +48,7 @@ public class SaveManager { // saves and loads the game using save.txt
 
     public static GameState load() { // reads the file, returns null if something is wrong with it
         try { // reading might fail if the file is messed up
-            Scanner in = new Scanner(new File(FILE_NAME)); // open the file
+            Scanner in = new Scanner(FILE); // open the file
             long seed = Long.parseLong(in.nextLine().trim()); // seed
             int floorNumber = Integer.parseInt(in.nextLine().trim()); // floor number
             String roomId = in.nextLine().trim(); // room id
